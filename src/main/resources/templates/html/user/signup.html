@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" th:href="@{/css/loginstyle.css}">
+    <link th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" rel='stylesheet'>
+    <link rel="icon" type="/images/png" th:href="@{/images/logo2.png}">
+</head>
+<body>
+    <div class="image">
+        <a href="../../index.html">
+            <img th:src="@{/images/logo.png}" width="300px">
+        </a>
+    </div>
+
+    <div class="wrapper">
+        <form action="/signup" th:object="${memberDTO}" method="post">
+            <h1>회원가입</h1>
+            <div class="input-box">
+                <label for="email"></label>
+                <input type="email" th:field="*{memberEmail}" placeholder="이메일" id="email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <label for="password"></label>
+                <input type="password" th:field="*{memberPassword}" placeholder="비밀번호" id="password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+<!--            <div class="input-box">-->
+<!--                <label for="checkPassword"></label>-->
+<!--                <input type="password" th:field="*{memberCheckPassword}" placeholder="비밀번호 확인" id="checkPassword" required>-->
+<!--                <i class='bx bxs-lock-alt' ></i>-->
+<!--            </div>-->
+
+            <div class="input-box">
+                <label for="name"></label>
+                <input type="text" th:field="*{memberName}" placeholder="닉네임" id="name" required>
+                <i class='bx bx-happy-beaming'></i>
+            </div>
+            <div class="input-box">
+                <label for="input-file"></label>
+                <input type="file" th:field="*{memberImage}" class="upload-box" accept="/image/jpeg, /image/png, /image/jpg" id="input-file">
+                <i class='bx bxs-photo-album'></i>
+            </div>
+            <p th:if="${signupFailed}" class="error" th:text="${signupFailed}"></p>
+            <button type="submit" class="btn">회원가입</button>
+        </form>
+    </div>
+</body>
+</html>

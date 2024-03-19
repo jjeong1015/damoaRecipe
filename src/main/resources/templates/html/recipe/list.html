@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 목록</title>
+    <link rel='stylesheet' th:href="@{/css/list.css}">
+    <link rel="icon" type="images/png" th:href="@{/images/logo2.png}">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/images/logo.png}" width="300px">
+                </a>
+            </div>
+            <div id="search">
+                <input type="text" placeholder="검색어를 입력하세요 list">
+                <button type="submit"><img th:src="@{/images/search.png}"></button>
+            </div>
+            <div id="user">
+                <a th:href="@{/login}">
+                    <img th:src="@{/images/login.png}" width="50px">
+                    <!--                    <p class="login-text"><a href="../user/login.html">LOGIN</a></p>-->
+                    <p class="login-text">LOGIN</p>
+                </a>
+            </div>
+<!--            <div id="user">-->
+<!--                <img th:src="@{/images/login.png}" width="50px">-->
+<!--                <p class="login-text"><a href="../user/login.html">LOGIN</a></p>-->
+<!--            </div>-->
+
+        </header>
+        <div id="links">
+            <ul>
+                <li>
+                    <a href="/recipe/list">
+                        <span id="quick-icon1"></span>
+                        <p>한식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon2"></span>
+                        <p>양식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon3"></span>
+                        <p>중식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon4"></span>
+                        <p>일식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon5"></span>
+                        <p>아시안</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon6"></span>
+                        <p>분식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon7"></span>
+                        <p>야식</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span id="quick-icon8"></span>
+                        <p>디저트</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="board_wrap">
+        <form id="recipeList" action="/recipe/list" method="get">
+            <div class="board_title">
+                <strong>한식</strong>
+                <p>맛있는 한식 레시피를 안내해드립니다.</p>
+            </div>
+            <div class="board_list_wrap">
+                <div class="board_list">
+                    <div class="top">
+                        <div class="num">번호</div>
+                        <div class="title">제목</div>
+                        <div class="writer">글쓴이</div>
+                        <div class="date">작성일</div>
+                        <div class="count">좋아요👍</div>
+                    </div>
+                    <div th:each="recipe : ${recipeList}">
+                    <div class="num"><span th:text="${recipe.recipeId}"></span></div>
+<!--                    <div class="title">-->
+<!--                        <a th:href="@{/html/recipe/{recipeId}(recipeId=${recipe.recipeId})}" th:text="${recipe.recipeName}"></a>-->
+<!--                    </div>-->
+                    <div class="title">
+                        <a th:href="@{/recipe/{recipeId}(recipeId=${recipe.recipeId})}" th:text="${recipe.recipeName}"></a>
+                    </div>
+                    <div class="writer"><span th:text="${recipe.recipeAuthorId}"></span></div>
+                    <div class="date">
+                        <span th:text="${recipe.createdAt}"></span>
+                    </div>
+                    <div class="count"><span th:text="${recipe.recipeLike}"></span></div>
+                    </div>
+    <!--                <div th:each="recipeItem : ${recipeList}">-->
+    <!--                    <div class="num"><span th:text="${recipeItem.recipeId}"></span></div>-->
+    <!--                    <div class="title">-->
+    <!--                        <a th:href="@{/html/recipe/{recipeId}(recipeId=${recipeItem.recipeId})}" th:text="${recipeItem.recipeName}"></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="writer"><span th:text="${recipeItem.recipeAuthorId}"></span></div>-->
+    <!--                    <div class="date">-->
+    <!--                        <span th:text="${recipeItem.recipeCreatedAt}"></span>-->
+    <!--                    </div>-->
+    <!--                    <div class="count"><span th:text="${recipeItem.recipeLike}"></span></div>-->
+    <!--                </div>-->
+                    <div class="board_page">
+                        <a href="#" class="bt first"><<</a>
+                        <a href="#" class="bt prev"><</a>
+                        <a href="#" class="num on">1</a>
+                        <a href="#" class="num">2</a>
+                        <a href="#" class="num">3</a>
+                        <a href="#" class="num">4</a>
+                        <a href="#" class="num">5</a>
+                        <a href="#" class="bt next">></a>
+                        <a href="#" class="bt last">>></a>
+                    </div>
+                    <div class="bt_wrap">
+                        <a href="/recipe" class="on">등록</a>
+        <!--                <a href="write.html" class="on">등록</a>-->
+                        <!--<a href="#">수정</a>-->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

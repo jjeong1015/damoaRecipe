@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'yangjin';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0; /* 마진값 초기화 */
+    padding: 0; /* 패딩값 초기화 */
+    box-sizing: border-box; /* 박스 영역은 테두리까지 지정 */ 
+}
+#container {
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    width: 1300px; /* 너비 지정 */
+}
+header {
+    width: 100%;
+    height: 100px;
+}
+#logo {
+    float: left;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+#search {
+    display: flex;
+    float: left;
+    width: 700px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+#search input {
+    width: 600px;
+    height: 45px;
+    padding: 10px;
+    border: 3px solid #B90000; 
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 10px;
+    font-family: 'yangjin', sans-serif;
+}
+#search button {
+    width: 45px;
+    height: 45px;
+    background-color: #B90000;
+    border: none;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#search button img {
+    width: 100%; 
+    height: 100%;
+}
+#user {
+    float: right;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 수평 가운데 정렬 추가 */
+}
+#user img {
+    margin-right: 15px;
+}
+.login-text {
+    text-decoration: none;
+    font-size: 20px; /* 로그인 텍스트의 글자 크기 조절 */
+    font-family: 'yangjin', sans-serif; /* 양진체 폰트 지정 및 대체 폰트 */
+    font-weight: bold; /* 글씨를 두껍게 설정 */
+    color: #B90000; 
+    margin: 0; 
+}
+.login-text a {
+    color: #B90000; /* 클릭 후에도 색상을 지정하여 변경 방지 */
+}
+
+ul {
+    list-style: none;
+}
+
+
+#links {
+    width: 100%;
+    height: 180px;
+}
+#links ul {
+    padding: 0;
+    overflow: hidden;
+}
+#links ul li {
+    float: left;
+    width: 12.5%;
+    text-align: center;
+    margin: 30px 0;
+}
+#links ul li a span {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-size: cover; /* 이미지를 비율을 유지하며 가득 채우도록 설정 */
+    background-position: center; /* 이미지를 가운데 정렬 */
+    margin-bottom: 10px; /* 원하는 간격으로 조절 */
+}
+#quick-icon1 {
+    background-image:url('../images/icon-1.png');
+}
+#quick-icon2 {
+    background-image:url('../images/icon-2.png');
+}
+#quick-icon3 {
+    background-image:url('../images/icon-3.png');
+}
+#quick-icon4 {
+    background-image:url('../images/icon-4.png');
+}
+#quick-icon5 {
+    background-image:url('../images/icon-5.png');
+}
+#quick-icon6 {
+    background-image:url('../images/icon-6.png');
+}
+#quick-icon7 {
+    background-image:url('../images/icon-7.png');
+}
+#quick-icon8 {
+    background-image:url('../images/icon-8.png');
+}
+#links ul li a {
+    text-decoration: none;
+    color: #B90000;
+    font-size: 15px;
+    font-family: 'yangjin', sans-serif;
+}
+#contents {
+    width: 100%;
+    height: 500px;
+}
+#king {
+    width: 100%;
+    height: 400px;
+}
+#king p {
+    color: #B90000; /* 글자 색상을 빨간색으로 지정 */
+    text-align: center;
+    font-size: 40px;
+    font-family: 'yangjin', sans-serif;
+}
+table {
+    width: 700px; /* 표의 폭을 600px로 지정 */
+    height: 320px; /* 표의 높이를 250px로 지정 */
+    border-collapse: collapse; /* 표의 경계를 합치기 */
+    margin: auto; /* 가운데 정렬을 위해 margin 속성 추가 */
+}
+td {
+    text-align: center; /* 수평 가운데 정렬 */
+    vertical-align: middle; /* 수직 가운데 정렬 */
+    padding: 10px; /* 내용 주변에 여백 추가 (옵션) */
+}
+td img {
+    max-width: 80px; /* 이미지가 셀을 벗어나지 않도록 최대 너비 지정 */
+    height: auto; /* 이미지의 비율을 유지하면서 크기 조절 */
+}
+#king td:nth-child(2) img {
+    max-width: 100px;
+    height: auto;
+}
+
+#king td p {
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    padding-top: 10px;
+}
+a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+#quick-silver {
+    /* span에 대한 스타일을 추가하고 필요에 따라 내용을 채워주세요 */
+    display: block;
+    width: 200px;
+    height: 150px;
+    background-image:url('../images/advertisement4.png');
+    margin: 0 auto;
+    overflow: hidden;
+}
+#quick-gold {
+    /* span에 대한 스타일을 추가하고 필요에 따라 내용을 채워주세요 */
+    display: block;
+    width: 200px;
+    height: 150px;
+    background-image:url('../images/advertisement4.png');
+    margin: 0 auto;
+    overflow: hidden;
+}
+#quick-bronze {
+    /* span에 대한 스타일을 추가하고 필요에 따라 내용을 채워주세요 */
+    display: block;
+    width: 200px;
+    height: 150px;
+    background-image:url('../images/advertisement4.png');
+    margin: 0 auto;
+    overflow: hidden;
+}
+#advertisement {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+#slides {
+    position: absolute;
+}
+#slides > img {
+    width: 100%;
+    float: left;
+}
+footer {
+    width: 100%;
+    height: 150px;
+    border-top: 2px solid #DA726A;
+}
+#bottomMenu {
+    width: 100%;
+    height: 20px;
+    position: relative;
+}
+#bottomMenu ul {
+    margin-top: 15px;
+}
+#bottomMenu ul li {
+    float: left;
+    padding: 1px 20px;
+    border-right: 1px solid #B90000;
+}
+#bottomMenu ul li:last-child {
+    border-right: none;
+}
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+    font-size: 15px;
+    color: #B90000;
+    text-decoration: none;
+    font-family: 'yangjin', sans-serif;
+}
+#sns {
+    float: right; /* 수정된 부분 */
+    margin-top: 15px; /* 수정된 부분 */
+}
+#sns ul li {
+    display: inline-block;
+    border: none;
+    padding: 5px;
+}
+#sns ul li img {
+    width: 45px; /* 변경하고자 하는 너비 값으로 조정 */
+    height: auto; /* 높이를 자동으로 조정하여 가로세로 비율을 유지 */
+}
+#team {
+    clear: left;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+#team p {
+    font-size: 12px;
+    color: #DA726A;
+    font-family: 'yangjin', sans-serif;
+}

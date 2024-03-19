@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>다모아레시피</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="icon" type="/images/png" th:href="@{/images/logo2.png}" />
+</head>
+<tbody>
+<div id="container">
+    <header>
+        <div id="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/images/logo.png}" width="300px">
+            </a>
+        </div>
+        <div id="search">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button type="submit"><img th:src="@{/images/search.png}"></button>
+        </div>
+        <div id="user">
+            <a th:href="@{/login}">
+                <img th:src="@{/images/login.png}" width="50px">
+                <!--                    <p class="login-text"><a href="../user/login.html">LOGIN</a></p>-->
+                <p class="login-text">LOGIN</p>
+            </a>
+        </div>
+<!--        <div id="user">-->
+<!--            <img th:src="@{/images/login.png}" width="50px">-->
+<!--            <p class="login-text"><a th:href="@{/html/user/login.html}">LOGIN</a></p>-->
+<!--        </div>-->
+    </header>
+
+    <div id="links">
+        <ul>
+            <li>
+                <a href="/recipe/list">
+<!--                <a th:href="@{/html/recipe/list.html}">-->
+                    <span id="quick-icon1"></span>
+                    <p>한식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon2"></span>
+                    <p>양식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon3"></span>
+                    <p>중식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon4"></span>
+                    <p>일식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon5"></span>
+                    <p>아시안</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon6"></span>
+                    <p>분식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon7"></span>
+                    <p>야식</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/#}">
+                    <span id="quick-icon8"></span>
+                    <p>디저트</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="contents">
+        <div id="king">
+            <p>👑명예의 전당👑</p>
+            <table>
+                <tr>
+                    <td><img th:src="@{/images/silver.png}" alt="2등"></td>
+                    <td><img th:src="@{/images/gold.png}" alt="1등"></td>
+                    <td><img th:src="@{/images/bronze.png}" alt="3등"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a th:href="@{/#}">
+                            <span id="quick-silver"></span>
+                            <p>레시피2</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/#}">
+                            <span id="quick-gold"></span>
+                            <p>레시피1</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/#}">
+                            <span id="quick-bronze"></span>
+                            <p>레시피3</p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="advertisement">
+            <div id="slides">
+                <img th:src="@{/images/advertisement1.png}" alt="광고1">
+                <img th:src="@{/images/advertisement2.png}" alt="광고2">
+                <img th:src="@{/images/advertisement3.png}" alt="광고3">
+                <img th:src="@{/images/advertisement4.png}" alt="광고4">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="bottomMenu">
+            <ul>
+                <li><a th:href="@{https://gwnucs.gwnu.ac.kr/sites/gwnucs/index.do}">팀 소개</a></li>
+                <li><a th:href="@{https://www.gwnu.ac.kr/kr/7951/subview.do}">개인정보처리방침</a></li>
+                <li><a th:href="@{https://www.gwnu.ac.kr/newCampusMap/kr/view..do#this}">위치 안내</a></li>
+            </ul>
+        </div>
+        <div id="sns">
+            <ul>
+                <li><a th:href="@{/#}">><img src="/images/sns-1.png"></a></li>
+                <li><a th:href="@{/#}"><img src="/images/sns-2.png"></a></li>
+                <li><a th:href="@{https://www.youtube.com/channel/UC5ZDu4yTAAQUnVIUYYVlo5Q}"><img src="/images/sns-3.png"></a></li>
+            </ul>
+        </div>
+        <div id="team">
+            <p>강원특별자치도 원주시 흥업면 남원로 150 국립 강릉원주대학교 원주캠퍼스 과학기술대학2호관 204호 컴퓨터공학과/ 804호 컴퓨터공학과</p>
+            <p>TEL : 033-760-8660/8700&nbsp; &nbsp; &nbsp; &nbsp;FAX : 033-760-8019</p>
+            <br>
+            <p>COPYRIGHT (C) 요리킹조리킹. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</div>
+<script src="/js/slideshow.js"></script>
+</tbody>
+</html>

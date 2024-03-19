@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 수정</title>
+    <link rel='stylesheet' th:href="@{/css/list.css}">
+    <link rel="icon" type="images/png" th:href="@{/images/logo2.png}">
+</head>
+<body>
+<div id="container">
+    <header>
+        <div id="logo">
+            <a th:href="@{/}">
+                <img th:src="@{/images/logo.png}" width="300px">
+            </a>
+        </div>
+        <div id="search">
+            <input type="text" placeholder="검색어를 입력하세요 edit">
+            <button type="submit"><img th:src="@{/images/search.png}"></button>
+        </div>
+        <div id="user">
+            <a th:href="@{/login}">
+                <img th:src="@{/images/login.png}" width="50px">
+                <p class="login-text">LOGIN</p>
+            </a>
+        </div>
+    </header>
+</div>
+<div class="board_wrap">
+    <form th:action="@{/recipe/update/{recipeId}(recipeId=${recipe.recipeId})}" method="post" th:object="${recipeDTO}">
+        <div class="board_title">
+            <strong>레시피 수정</strong>
+        </div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text" th:field="*{recipeName}" placeholder="제목 입력" th:value="${recipe.recipeName}"></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd><input type="text" th:field="*{recipeAuthorId}" placeholder="글쓴이 입력" th:value="${recipe.recipeAuthorId}"></dd>
+                    </dl>
+                    <dl>
+                        <dt>난이도</dt>
+                        <dd><input type="text" th:field="*{recipeLevel}" placeholder="난이도 입력 (예: 1, 2, 3, 4, 5)" value="상" th:value="${recipe.recipeLevel}"></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>칼로리</dt>
+                        <dd><input type="text" th:field="*{recipeCalorie}" placeholder="칼로리 입력" value="500kcal" th:value="${recipe.recipeCalorie}"></dd>
+                    </dl>
+                    <dl>
+                        <dt>조리시간</dt>
+                        <dd><input type="text" th:field="*{recipeCookingTime}" placeholder="조리시간 입력" value="1시간 30분" th:value="${recipe.recipeCookingTime}"></dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                        <textarea placeholder="내용 입력" th:field="*{recipeContent}" th:text="${recipe.recipeContent}">
+                        </textarea>
+                </div>
+                <input type="hidden" name="recipeId" th:value="${recipe.recipeId}">
+<!--                <button type="submit" class="bt_wrap">수정</button>-->
+            </div>
+            <div class="bt_wrap">
+                <button type="submit">수정</button>
+                <a th:href="@{/recipe/update}" class="on">수정</a>-->
+                <a th:href="@{/recipe/list}">취소</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="ko">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>레시피 수정</title>-->
+<!--    <link rel='stylesheet' th:href="@{/css/list.css}">-->
+<!--    <link rel="icon" type="images/png" th:href="@{/images/logo2.png}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id="container">-->
+<!--        <header>-->
+<!--            <div id="logo">-->
+<!--                <a th:href="@{/}">-->
+<!--                    <img th:src="@{/images/logo.png}" width="300px">-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            <div id="search">-->
+<!--                <input type="text" placeholder="검색어를 입력하세요 edit">-->
+<!--                <button type="submit"><img th:src="@{/images/search.png}"></button>-->
+<!--            </div>-->
+<!--            <div id="user">-->
+<!--                <a th:href="@{/login}">-->
+<!--                    <img th:src="@{/images/login.png}" width="50px">-->
+<!--                    &lt;!&ndash;                    <p class="login-text"><a href="../user/login.html">LOGIN</a></p>&ndash;&gt;-->
+<!--                    <p class="login-text">LOGIN</p>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <div id="user">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img th:src="@{/images/login.png}" width="50px">&ndash;&gt;-->
+<!--&lt;!&ndash;                <p class="login-text"><a href="../user/login.html">LOGIN</a></p>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </header>-->
+<!--    </div>-->
+<!--    <div class="board_wrap">-->
+<!--        <form th:action="@{/recipe/update/{recipeId}(recipeId=${recipe.recipeId})}" method="post" th:object="${recipeDTO}">-->
+<!--&lt;!&ndash;        <form th:action="@{/recipe/update}" th:object="${recipe}" method="post">&ndash;&gt;-->
+<!--            <div class="board_title">-->
+<!--                <strong>레시피 등록</strong>-->
+<!--            </div>-->
+<!--            <div class="board_write_wrap">-->
+<!--                <div class="board_write">-->
+<!--                    <div class="title">-->
+<!--                        <dl>-->
+<!--                            <dt>제목</dt>-->
+<!--                            <dd><input type="text" th:field="${recipe.recipeName}" placeholder="제목 입력"></dd>-->
+<!--                            &lt;!&ndash;                            <dd><input type="text" th:field="*{recipe.recipeName}" placeholder="제목 입력" /></dd>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <dd><input type="text" th:field="*{recipe.recipeName}" placeholder="제목 입력" value="글 제목이 들어갑니다."></dd>&ndash;&gt;-->
+<!--                        </dl>-->
+<!--                    </div>-->
+<!--                    <div class="info">-->
+<!--                        <dl>-->
+<!--                            <dt>글쓴이</dt>-->
+<!--                            <dd><input type="text" th:field="${recipe.recipeAuthorId}" placeholder="글쓴이 입력"></dd>-->
+<!--                        </dl>-->
+<!--                        <dl>-->
+<!--                            <dt>난이도</dt>-->
+<!--                            <dd><input type="text" th:field="${recipe.recipeLevel}" placeholder="난이도 입력 (예: 1, 2, 3, 4, 5)" value="상"></dd>-->
+<!--                        </dl>-->
+<!--                    </div>-->
+<!--                    <div class="info">-->
+<!--                        <dl>-->
+<!--                            <dt>칼로리</dt>-->
+<!--                            <dd><input type="text" th:field="${recipe.recipeCalorie}" placeholder="칼로리 입력" value="500kcal"></dd>-->
+<!--                        </dl>-->
+<!--                        <dl>-->
+<!--                            <dt>조리시간</dt>-->
+<!--                            <dd><input type="text" th:field="${recipe.recipeCookingTime}" placeholder="조리시간 입력" value="1시간 30분"></dd>-->
+<!--                        </dl>-->
+<!--                    </div>-->
+<!--    &lt;!&ndash;                <div class="title">&ndash;&gt;-->
+<!--    &lt;!&ndash;                    <dl>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <dt>재료</dt>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <dd><input type="text" th:field="*{}" placeholder="재료 입력" value="김치, 두부, 삼겹살"></dd>&ndash;&gt;-->
+<!--    &lt;!&ndash;                    </dl>&ndash;&gt;-->
+<!--    &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                    <div class="cont">-->
+<!--                        <textarea placeholder="내용 입력" th:field="${recipe.recipeContent}" >-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                            글 내용이 들어갑니다.-->
+<!--                        </textarea>-->
+<!--                    </div>-->
+<!--                    <div class="title">-->
+<!--    &lt;!&ndash;                    <dl>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <dt>사진 첨부</dt>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <dd><input type="file" th:field="*{}" placeholder="사진 첨부" value="#"></dd>&ndash;&gt;-->
+<!--    &lt;!&ndash;                    </dl>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <input type="hidden" id="recipeId" th:value="${recipe.recipeId}">-->
+<!--                    <button type="submit" class="bt_wrap">수정</button>-->
+<!--                </div>-->
+<!--                <div class="bt_wrap">-->
+<!--                    <a th:href="@{/recipe/update}" class="on">수정</a>-->
+<!--                    <a th:href="@{/recipe/list}">취소</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->

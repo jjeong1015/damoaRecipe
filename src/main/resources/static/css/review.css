@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'yangjin';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.review {
+    margin-top: 20px;
+}
+
+.comment_form {
+    margin-top: 20px;
+}
+
+.comment_form label {
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.comment_form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-family: 'yangjin', sans-serif;
+    color: #B90000;
+}
+
+.comment_form select {
+    width: 60px;
+    margin-bottom: 15px;
+}
+.comment_form textarea {
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    resize: vertical;
+}
+
+.comment_form button {
+    background-color: #B90000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'yangjin', sans-serif;
+    display: block; /* 블록 요소로 설정 */
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+    margin-top: 10px;
+}
+
+.comment_list {
+    margin-top: 80px;
+}
+
+.comment_list h2 {
+    font-size: 20px;
+    font-family: 'yangjin', sans-serif;
+    color: #B90000;
+    margin-bottom: 10px;
+    display: block;
+}
+.comment_list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comment_list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment_info {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.comment_text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.comment_actions {
+    text-align: right;
+}
+
+.edit_comment_btn,
+.delete_comment_btn {
+    background-color: #B90000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'yangjin', sans-serif;
+}
